@@ -1,0 +1,45 @@
+/* app css stylesheet */
+
+.valid-topic{
+  background: #FFFFFF;
+  transition: all 0.2s;
+}
+.valid-topic:hover{
+  background: #E3E3E3;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.pointer:hover{
+  cursor: pointer;
+}
+
+.invalid-topic{
+  background: #FFFFFF;
+  transition: all 0.3s;
+}
+.invalid-topic:hover{
+  background: #F2F2F2;
+  transition: all 0.3s;
+  cursor: url('cross-red.ico'), default;
+}
+.self_comment{
+  background: #E3E3E3;
+
+}
+.comment_box{
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media  (max-width: 512px) {
+  .comment_box{
+    width: 95%;
+  }
+}
+.no_link{
+    color:#000000 !important;
+}
+.no_link:hover{
+    background: #E3E3E3;
+    text-decoration:none;
+}

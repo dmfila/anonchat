@@ -1,0 +1,31 @@
+<div class="text-center">
+<h2 ng-show="clientInfo.loggedIn">Welcome user # {{clientInfo.username}}</h2>
+    <h2>
+        <small>Discuss your own topic</small>
+    </h2>
+    <br>
+    <div ng-show="clientInfo.loggedIn" class="input-group comment_box">
+        <input ng-keyup="$event.keyCode == 13 ? visitTopic() : null" ng-model="search.content" id="searchField" class="form-control"/>
+    <span  ng-click="submitComment()" class="input-group-addon pointer">
+        <i class="fa fa-comments"/>
+    </span>
+    </div>
+<h2>
+    <small>or check some topics currently being discussed on Twitter!</small>
+</h2>
+<ul class="list-group" id="topicsList">
+    <a class="no_link" ng-href="/topic/{{topic | escape}}" ng-repeat="topic in topics">
+        <li class="list-group-item valid-topic" >
+            <b>{{ topic }}</b>
+        </li>
+    </a>
+</ul>
+    <h2><small>5 most recent topic talks</small></h2>
+    <ul class="list-group" id="recentTopicsList">
+        <a class="no_link" ng-href="/topic/{{topic.topic | escape}}" ng-repeat="topic in recentTopics">
+            <li class="list-group-item valid-topic" >
+                <b>{{ topic.topic }}</b>
+            </li>
+        </a>
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+<div class="text-center">
+<button ng-click="goBack();" class="btn btn-success " >
+    <i class="fa fa-home fa-2x"/>
+</button>
+</div>
+<h2 class="text-center">
+    <button ng-click="prevTopic();" class="btn btn-primary" style="float: left;">
+        <i class="fa fa-angle-double-left fa-2x"/>
+    </button>
+    {{topicName}}
+    <button ng-click="nextTopic();" class="btn btn-primary" style="float: right;">
+        <i class="fa fa-angle-double-right fa-2x"/>
+    </button>
+</h2><br>
+<div ng-show="clientInfo.loggedIn" class="input-group comment_box">
+    <input ng-keyup="$event.keyCode == 13 ? submitComment() : null" ng-model="comment.content" id="commentField" class="form-control"/>
+    <span  ng-click="submitComment()" class="input-group-addon pointer">
+        <i class="glyphicon glyphicon-comment "/>
+    </span>
+</div>
+<ul class="list-group text-center" id="discussionList">
+    <li class="list-group-item" ng-repeat="comment in comments | reverse" ng-class="(clientInfo.username == comment.username) ? 'self_comment' : ''">
+        <div>
+            <i style="float:left; display: inline-block;" ng-show="clientInfo.username == comment.username" ng-click="deletePost(comment._id)" class="fa fa-3x fa-trash-o pointer"></i>
+            <b>{{ comment.comment}}</b>
+            <br>
+            <i style="text-align: right;">by #{{comment.username}} (<span am-time-ago="{{comment.post_time}}"></span>)</i>
+        </div>
+    </li>
+</ul>
