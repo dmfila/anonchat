@@ -22,5 +22,4 @@ Make sure to unblock uBlock origin as it blocks an important website that is use
 
 
 ## Demo
-
-[Demo]: (http://www.pvp.kz:3000)
+[Demo](http://www.pvp.kz:3000)
